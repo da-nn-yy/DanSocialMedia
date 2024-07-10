@@ -1,10 +1,14 @@
 import {auth,provider} from "../config/frbsConfig";
 import { signInWithPopup } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
 
-  const signInWithGoogle = () => {
-    signInWithPopup(auth, provider)
+  const navigate = useNavigate();
+
+  const signInWithGoogle = async () => {
+    const result = await signInWithPopup(auth, provider)
+    navigate("/");
   }
   return (
     <div>
