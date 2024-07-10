@@ -1,28 +1,18 @@
 import './App.css'
-import { useState } from 'react'
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import { Main } from './Pages/Main';
+import { Login } from './Pages/Login';
 
 function App() {
 
-const [count,setCount] = useState(0)
-
-  const incr = () => {
-    setCount(count + 1)
-  }
-   const decr = () => {
-    setCount(count - 1)
-  }
-   const restart = () => {
-    setCount(0)
-  }
   return (
     <>
-      <h1>{count}</h1>
-
-      <div style={{display:"flex" , justifyContent:"center", gap:"3rem", fontFamily:"Poppins"}}>
-        <button onClick={incr}>Increase</button>
-        <button onClick={decr}>Decrease</button>
-        <button onClick={restart}>Restart</button>
-      </div>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Main/>}/>
+          <Route path='/login' element={<Login/>}/>
+        </Routes>
+      </Router>
     </>
   )
 }
