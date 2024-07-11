@@ -11,10 +11,10 @@ interface CreateFormData {
 export const CreateForm = () =>{
   const schema  = yup.object().shape({
     title:yup.string().required("Must add a title"),
-    description:yup.string().required("Must add a title"),
+    description:yup.string().required("Must add a description"),
   });
 
-  const {register , handleSubmit} = useForm<CreateFormData>({
+  const {register , handleSubmit,formState:{errors}} = useForm<CreateFormData>({
     resolver:yupResolver(schema), 
   });
 
@@ -25,7 +25,9 @@ export const CreateForm = () =>{
   return(
     <form action=" " onSubmit={handleSubmit(createSubmit)}>
       <input type="text" placeholder="Title..." {...register("title")}/>
+      <p>{errors.title?.message}</p>
       <textarea placeholder="Description..." {...register("description")}/>
+      <p>{errors.description?.message}</p>
       <input type="submit" />
     </form>
   );
