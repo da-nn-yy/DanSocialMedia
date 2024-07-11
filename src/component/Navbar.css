@@ -12,6 +12,14 @@
   text-align: center;
   margin-right: 50px;
 }
+button{
+  background: none;
+  border: none;
+  margin: 10px;
+  color: white;
+  font-size: 1rem;
+  font-family: "Poppins";
+}
 
 .links a {
   color: white;
@@ -20,7 +28,7 @@
   margin: 10px;
   transition: all 0.2s ease-in-out;
 }
-.links a:hover{
+.links a:hover,button:hover{
   font-weight: 700;
 }
 

@@ -18,7 +18,9 @@ export const Navbar = () => {
             <div className="btween">
               <div className="links">
                 <Link className="link" to="/"> Home </Link>
+                {!user && (
                 <Link className="link" to="/login">Login</Link>
+                )}
               </div>
                     
             <div className="user">
