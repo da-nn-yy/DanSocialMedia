@@ -9,7 +9,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 export const CreateForm = () =>{
 
-  const [user]  = useAuthState(auth)
+  const [user]  = useAuthState(auth);
 
 
   const schema  = yup.object().shape({
@@ -28,8 +28,9 @@ export const CreateForm = () =>{
 
   const createSubmit = (data) => {
     addDoc(postRef,{
-      title:data.title,
-      description: data.description,
+      // title:data.title,
+      // description: data.description, /////OR
+      ...data,
       username: user?.displayName,
       userId: user?.uid,
     })
