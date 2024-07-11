@@ -12,7 +12,7 @@
   text-align: center;
   margin-right: 50px;
 }
-button{
+.out{
   background: none;
   border: none;
   margin: 10px;
@@ -28,7 +28,8 @@ button{
   margin: 10px;
   transition: all 0.2s ease-in-out;
 }
-.links a:hover,button:hover{
+.links a:hover,
+.out:hover{
   font-weight: 700;
 }
 
