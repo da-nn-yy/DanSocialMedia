@@ -1,3 +1,6 @@
+import { CreateForm } from "./create-form"
 export const CreatePost = () => {
-  return <div>Post Page</div>
+  return <div>
+    <CreateForm/>
+  </div>
 }
