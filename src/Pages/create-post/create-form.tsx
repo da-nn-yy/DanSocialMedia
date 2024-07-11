@@ -1,6 +1,12 @@
 import { useForm } from "react-hook-form";
 import * as yup from 'yup';
 import { yupResolver } from "@hookform/resolvers/yup";
+
+interface CreateFormData {
+  title:string;
+  description:string;
+}
+
 export const CreateForm = () =>{
   const schema  = yup.object().shape({
     title:yup.string().required("Must add a title"),
@@ -11,7 +17,7 @@ export const CreateForm = () =>{
     resolver:yupResolver(schema), 
   });
 
-  const createSubmit = (data) => {
+  const createSubmit = (data:Cr) => {
     console.log(data)
   };
 

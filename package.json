@@ -17,6 +17,7 @@
     "react-firebase-hooks": "^5.1.1",
     "react-hook-form": "^7.52.1",
     "react-router-dom": "^6.24.1",
+    "typescript": "^5.5.3",
     "yup": "^1.4.0"
   },
   "devDependencies": {
