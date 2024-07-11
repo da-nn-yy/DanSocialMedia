@@ -7,15 +7,19 @@ export const CreateForm = () =>{
     description:yup.string().required("Must add a title"),
   });
 
-  const {register ,hundleSubmit} = useForm({
+  const {register , handleSubmit} = useForm({
     resolver:yupResolver(schema), 
-  })
+  });
+
+  const createSubmit = (data) => {
+    console.log(data)
+  };
 
   return(
-    <form action=" ">
+    <form action=" " onSubmit={handleSubmit(createSubmit)}>
       <input type="text" placeholder="Title..." {...register("title")}/>
       <textarea type="text" placeholder="Description..." {...register("description")}/>
       <input type="submit" />
     </form>
   );
-};
+}; 
