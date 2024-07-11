@@ -1,4 +1,4 @@
-import { CreateForm } from "./create-form"
+import { CreateForm } from "./create-formTS"
 export const CreatePost = () => {
   return <div>
     <CreateForm/>

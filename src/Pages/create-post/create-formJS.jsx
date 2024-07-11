@@ -2,10 +2,8 @@ import { useForm } from "react-hook-form";
 import * as yup from 'yup';
 import { yupResolver } from "@hookform/resolvers/yup";
 
-interface CreateFormData {
-  title:string;
-  description:string;
-}
+
+
 
 export const CreateForm = () =>{
   const schema  = yup.object().shape({
@@ -17,14 +15,14 @@ export const CreateForm = () =>{
     resolver:yupResolver(schema), 
   });
 
-  const createSubmit = (data:Cr) => {
+  const createSubmit = (data) => {
     console.log(data)
   };
 
   return(
     <form action=" " onSubmit={handleSubmit(createSubmit)}>
       <input type="text" placeholder="Title..." {...register("title")}/>
-      <textarea type="text" placeholder="Description..." {...register("description")}/>
+      <textarea placeholder="Description..." {...register("description")}/>
       <input type="submit" />
     </form>
   );
