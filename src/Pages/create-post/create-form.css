@@ -4,8 +4,8 @@ form{
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  width:34rem;
-  padding: 1.9rem 1.2rem;
+  width:27rem;
+  padding: 3.5rem 1rem;
   margin-top: 3rem;
   text-align: center;
   background: #3e4057;
@@ -17,13 +17,14 @@ form div{
   justify-content: center;
   align-items: center;
   gap:1rem;
+  padding:1rem;
 }
 .input,textarea {
   background-color: #212121;
   width:300px;
   height: 30px;
   padding: 10px;
-  text-align: center;
+  text-align:left;
   border: 2px solid white;
   border-radius: 5px;
   color: #fff;
@@ -47,6 +48,7 @@ form div{
   width: 100px;
   height: 45px;
   transition: .3s;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -60,23 +62,24 @@ form div{
 
 .desc-error{
   width: 200px;
-  background-color: #f44336;
-  color: #fff;
+  background-color: #610600d7;
+  color: #ff0000;
   text-align: center;
   border-radius: 6px;
   padding: 10px;
   position: absolute;
   z-index: 1;
-  bottom:55%;
-  left: 50%;
+  bottom:49%;
+  left: 48%;
   margin-left: -100px;
+  border: 2px solid #ff0000;
   /* Center the error message */
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.3s, visibility 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.error::after {
+.desc-error::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -87,9 +90,34 @@ form div{
   border-style: solid;
   border-color: #f44336 transparent transparent transparent;
 }
+.title-error {
+  width: 200px;
+  background-color: #610600d7;
+  color: #ff0000;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 79%;
+  left:48%;
+  margin-left: -100px;
+  border: 2px solid #ff0000;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease-in-out;
+}
+
+.title-error::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  /* Arrow at the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #f51000 transparent transparent transparent;
+}
 
 /* Hide error message if there is no error */
-.input:not(:has(.error)) .error {
-  visibility: hidden;
-  opacity: 0;
-}
