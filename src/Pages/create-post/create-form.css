@@ -1,0 +1,95 @@
+form{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width:34rem;
+  padding: 1.9rem 1.2rem;
+  margin-top: 3rem;
+  text-align: center;
+  background: #3e4057;
+  border-radius: 10px;
+  position: relative;
+}
+form div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+}
+.input,textarea {
+  background-color: #212121;
+  width:300px;
+  height: 30px;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: #fff;
+  /* box-shadow: 3px 3px 2px rgb(249, 255, 85); */
+}
+
+.input:focus ,textarea:focus{
+  color: rgb(0, 255, 255);
+  background-color: #212121;
+  outline-color: rgb(0, 255, 255);
+  box-shadow: -3px -3px 15px rgb(0, 255, 255);
+  transition: .1s;
+  transition-property: box-shadow;
+}
+.btn {
+  font-family: "Poppins";
+  background-color: #f3f7fe;
+  color: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  width: 100px;
+  height: 45px;
+  transition: .3s;
+}
+
+.btn:hover {
+  background-color: #3b82f6;
+  box-shadow: 0 0 0 5px #3b83f65f;
+  color: #fff;
+}
+.btn:active{
+  transform: scale(0.9);
+}
+
+.desc-error{
+  width: 200px;
+  background-color: #f44336;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom:55%;
+  left: 50%;
+  margin-left: -100px;
+  /* Center the error message */
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s, visibility 0.3s ease-in-out;
+}
+
+.error::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  /* Arrow at the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #f44336 transparent transparent transparent;
+}
+
+/* Hide error message if there is no error */
+.input:not(:has(.error)) .error {
+  visibility: hidden;
+  opacity: 0;
+}

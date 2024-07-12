@@ -5,6 +5,7 @@ import { addDoc,collection } from "firebase/firestore";
 import { auth, db } from "../../config/frbsConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import './create-form.css'
 
 
 
@@ -43,13 +44,19 @@ export const CreateForm = () =>{
   };
 
   return(
+    <>
     <form action=" " onSubmit={handleSubmit(createSubmit)}>
-      <input type="text" placeholder="Title..." {...register("title")}/>
-      {errors.title && <p>{errors.title?.message}</p>}
-      <textarea placeholder="Description..." {...register("description")}/>
-      {errors.description && <p>{errors.description?.message}</p>}
-      <input type="submit" />
+      <div>
+        <input className="input" type="text" placeholder="Title..." {...register("title")}/>
+        {errors.title && <p className="error">{errors.title?.message}</p>}
+      </div>
+      <div>
+        <textarea placeholder="Description..." {...register("description")}/>
+        {errors.description && <p className="desc-error">{errors.description?.message}</p>}
+      </div>
+      <input className="btn" type="submit" />
     </form>
+    </>
   );
 }; 
 
