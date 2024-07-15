@@ -1,6 +1,6 @@
 import { getDocs,collection   } from "firebase/firestore"
-import { db } from "../config/frbsConfig"
-import { useState } from "react"
+import { db } from "../../config/frbsConfig"
+import { useEffect, useState } from "react"
 
 export const Main = () => {
   const [postList,setPostList] = useState(null)
@@ -10,8 +10,10 @@ export const Main = () => {
     const data = await getDocs(postRef)
     setPostList(data.docs.map((doc)=>({...doc.data(),id:doc.id})));
   }
-  getMyPosts();
+  useEffect(() => {
+    getMyPosts();
+  })
   return (
-    <div>{postList}</div>
+    <div>{postList?.map((post)=>(<div key={post.id}>{post.title}</div>))}</div>
   )
  }
