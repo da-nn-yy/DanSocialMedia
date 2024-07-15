@@ -10,7 +10,7 @@ export const PostTs =(props: Props) => {
   return(
     <div>
       <div className="title">
-        <h2>{post.title}</h2>
+        <h2 style={{fontSize:"3rem"}}>{post.title}</h2>
       </div>
       <div className="descrp">
         <p>{post.description}</p>
