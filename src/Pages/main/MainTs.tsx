@@ -1,7 +1,8 @@
 import { getDocs,collection   } from "firebase/firestore"
-import { db } from "../../config/frbsConfig"
+import { db } from "../../config/frbsConfig";
 import { useEffect, useState } from "react"
-
+import React from "react";
+import { PostTs } from "./postTs";
 interface Post {
   id:string;
   userId:string;
@@ -10,7 +11,7 @@ interface Post {
   description:string;
 }
 
-export const Main = () => {
+export const MainTs = () => {
   const [postList,setPostList] = useState<Post[] | null>(null)
 
   const postRef = collection(db,"posts")
@@ -20,8 +21,11 @@ export const Main = () => {
   }
   useEffect(() => {
     getMyPosts()
-  })
+  },[])
   return (
-    <div>{postList}</div>
+    <div>{postList?.map((post)=> (
+    <PostTs />
+  ))}
+  </div>
   )
  }
