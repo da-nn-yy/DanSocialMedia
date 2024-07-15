@@ -22,7 +22,6 @@ export const Navbar = () => {
                 <Link to="/login">Login</Link> :
                 <Link to="/createpost">Create Post</Link>
                 }
-                <Link to="/createpost">Create Post</Link>
               </div>
                     
             <div className="user">
