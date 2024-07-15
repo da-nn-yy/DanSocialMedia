@@ -39,7 +39,7 @@ export const CreateForm = () =>{
       userId: user?.uid,
     })
 
-    console.log(data)
+    // console.log(data)
     navigate("/")
   };
 

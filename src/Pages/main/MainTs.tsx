@@ -3,7 +3,7 @@ import { db } from "../../config/frbsConfig";
 import { useEffect, useState } from "react"
 import React from "react";
 import { PostTs } from "./postTs";
-interface Post {
+export interface Post {
   id:string;
   userId:string;
   title:string;
@@ -24,7 +24,7 @@ export const MainTs = () => {
   },[])
   return (
     <div>{postList?.map((post)=> (
-    <PostTs />
+    <PostTs post={post}/>
   ))}
   </div>
   )
