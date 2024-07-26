@@ -12,7 +12,7 @@ export const PostTs =(props: Props) => {
   const {post} = props;
 
   const [user]  = useAuthState(auth);
-  const likesRef = collection(db,"likes   ")
+  const likesRef = collection(db,"likes")
 
   const addLike = async () => {
     await addDoc(likesRef,{
@@ -30,7 +30,7 @@ export const PostTs =(props: Props) => {
       </div>
       <div className="footer">
         <p>@{post.username}</p>
-        <button> &#128077;</button>
+        <button className="btn" style={{width:"3rem"}} onClick={addLike}> &#128077;</button>
       </div>
     </div>
   )
