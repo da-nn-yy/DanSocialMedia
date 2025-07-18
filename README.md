@@ -1,8 +1,10 @@
-# React + Vite
+# DanSocialMedia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DanSocialMedia is a modern social media web application built with React and Vite. It features modular components, fast development with Vite, and a clean, responsive design. The project includes user authentication, post creation, and integration with Firebase for backend services but still it is not done.
 
-Currently, two official plugins are available:
+Key technologies used:
+- React for building user interfaces
+- Vite for fast development and hot module replacement
+- Firebase for authentication and data storage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Explore the code to see how these technologies are combined to create a functional social media platform.
